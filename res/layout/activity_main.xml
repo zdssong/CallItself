@@ -6,6 +6,7 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <LinearLayout
+        android:id="@+id/buttonlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -25,6 +26,12 @@
             android:layout_weight="1"
             android:text="hang up" />
     </LinearLayout>
-    
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonlayout"
+        android:hint="电话号码" />
 
 </RelativeLayout>
