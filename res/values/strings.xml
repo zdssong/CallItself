@@ -5,6 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="call">call</string>
     <string name="hangup">hang up</string>
-    <string name=""></string>
+    <string name="callNumber">拨打的次数</string>
+    <string name="callTime">拨打的间隔时间</string>
+    <string name="phoneNumber">电话号码</string>
 
 </resources>

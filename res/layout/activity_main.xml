@@ -17,32 +17,41 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="call" />
+            android:text="@string/call" />
 
         <Button
             android:id="@+id/hangup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hang up" />
+            android:text="@string/hangup" />
     </LinearLayout>
-    
-    <LinearLayout android:id="@+id/callnumber"
-        android:layout_height="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/callnumber"
         android:layout_width="match_parent"
-        android:orientation="horizontal">
-        <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonlayout"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重复拨打的次数"/>
+            android:text="@string/callNumber" />
+
+        <NumberPicker
+            android:id="@+id/numberpicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
     </LinearLayout>
 
     <EditText
         android:id="@+id/number"
         android:layout_width="match_parent"
-        android:inputType="number"
         android:layout_height="wrap_content"
-        android:layout_above="@id/buttonlayout"
-        android:hint="电话号码" />
-    
+        android:layout_above="@id/callnumber"
+        android:hint="@string/phoneNumber"
+        android:inputType="number" />
 
 </RelativeLayout>
