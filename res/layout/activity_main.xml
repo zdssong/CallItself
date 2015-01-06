@@ -26,12 +26,23 @@
             android:layout_weight="1"
             android:text="hang up" />
     </LinearLayout>
+    
+    <LinearLayout android:id="@+id/callnumber"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重复拨打的次数"/>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/number"
         android:layout_width="match_parent"
+        android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_above="@id/buttonlayout"
         android:hint="电话号码" />
+    
 
 </RelativeLayout>

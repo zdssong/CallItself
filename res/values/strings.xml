@@ -3,5 +3,8 @@
 
     <string name="app_name">CallItself</string>
     <string name="hello_world">Hello world!</string>
+    <string name="call">call</string>
+    <string name="hangup">hang up</string>
+    <string name=""></string>
 
 </resources>
