@@ -28,11 +28,32 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/callTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonlayout"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/callTime" />
+
+        <NumberPicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/callnumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/buttonlayout"
-        android:orientation="horizontal" >
+        android:layout_above="@id/callTime"
+        android:orientation="horizontal"
+        android:padding="10dp" >
 
         <TextView
             android:layout_width="wrap_content"
