@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="@string/callTime" />
 
-        <NumberPicker
+        <com.widget.WtNumberPicker
             android:id="@+id/timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="@string/callNumber" />
 
-        <NumberPicker
+        <com.widget.WtNumberPicker
             android:id="@+id/numberpicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

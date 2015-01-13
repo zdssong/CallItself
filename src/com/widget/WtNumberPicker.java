@@ -1,14 +1,15 @@
 package com.widget;
 
-import com.callitself.R;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 public class WtNumberPicker extends LinearLayout {
+
+	private Context context;
 
 	public interface OnValueChangeListener {
 		void onValueChange(NumberPicker picker, int oldVal, int newVal);
@@ -41,18 +42,37 @@ public class WtNumberPicker extends LinearLayout {
 	public WtNumberPicker(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
+		this.context = context;
 	}
 
 	public WtNumberPicker(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
+		this.context = context;
 	}
 
 	public WtNumberPicker(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
-		
-		//处理类型属性
-		TypedArray attributesArray = context.obtainStyledAttributes(attrs,R.styleable., defStyleAttr, defStyleRes)
+		this.context = context;
+
+		// 处理类型属性
 	}
+
+	@SuppressLint("DrawAllocation")
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		// TODO Auto-generated method stub
+		super.onLayout(changed, l, t, r, b);
+		TextView textView = new TextView(context);
+		textView.setText("one");
+		textView.layout(l, t, r, b);
+	}
+
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		// TODO Auto-generated method stub
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	}
+
 }
