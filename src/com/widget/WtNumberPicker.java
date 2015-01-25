@@ -26,6 +26,7 @@ public class WtNumberPicker extends LinearLayout {
 		/**
 		 * 表示用户在滑动，单手指依然在尚明
 		 * */
+		
 		public static int SCROLL_STATE_TOUCH_SCROLL = 1;
 		public static int SCROLL_STATE_FLING = 2;
 
