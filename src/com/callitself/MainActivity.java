@@ -1,74 +1,50 @@
 package com.callitself;
 
-import com.widget.WtNumberPicker;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.NumberPicker;
-import android.widget.NumberPicker.OnValueChangeListener;
+import android.view.Window;
+import android.widget.LinearLayout;
 
-public class MainActivity extends Activity implements OnValueChangeListener {
+public class MainActivity extends Activity implements OnClickListener {
 
-	private Button call;
-	private Button hangUp;
-	private EditText phoneNumber;
-	private WtNumberPicker timePicker;
-	private WtNumberPicker numberPicker;
+	private LinearLayout phoneLayout = null;
+	private LinearLayout smsLayout = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		initWidget();
 		initListener();
-
-//		timePicker.setMaxValue(60);
-//		timePicker.setMinValue(0);
-
-//		numberPicker.setMaxValue(10);
-//		numberPicker.setMinValue(0);
-
-		call.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				if (!phoneNumber.getText().toString().equals("")) {
-					Intent intent = new Intent(Intent.ACTION_CALL, Uri
-							.parse("tel:" + phoneNumber.getText()));
-					startActivity(intent);
-				}
-			}
-		});
 	}
 
 	private void initWidget() {
-		call = (Button) findViewById(R.id.call);
-		phoneNumber = (EditText) findViewById(R.id.number);
-		timePicker = (WtNumberPicker) findViewById(R.id.timePicker);
-		numberPicker = (WtNumberPicker) findViewById(R.id.numberpicker);
+		phoneLayout = (LinearLayout) findViewById(R.id.phoneLayout);
+		smsLayout = (LinearLayout) findViewById(R.id.smsLayout);
 	}
 
 	private void initListener() {
-//		timePicker.setOnValueChangedListener(this);
-//		numberPicker.setOnValueChangedListener(this);
+		phoneLayout.setOnClickListener(this);
+		smsLayout.setOnClickListener(this);
 	}
 
 	@Override
-	public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+	public void onClick(View v) {
 		// TODO Auto-generated method stub
-//		if (picker == timePicker)
-//			System.out.println("timePicker");
-//		else if (picker == numberPicker)
-//			System.out.println("numberPicker");
-//		else
-//			System.out.println("nothing");
-
+		Intent intent = new Intent();
+		switch (v.getId()) {
+		case R.id.phoneLayout:
+			intent.setClass(MainActivity.this, PhoneActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.smsLayout:
+			intent.setClass(MainActivity.this, SmsActivity.class);
+			startActivity(intent);
+			break;
+		}
 	}
 }
