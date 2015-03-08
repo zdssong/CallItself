@@ -18,5 +18,8 @@
 
     <!-- activit_phone中使用的字符串 -->
     <string name="new_message">新信息</string>
+    <string name="recipients">收件人</string>
+    <string name="contacts">联系人</string>
+    <string name="context">内容</string>
 
 </resources>
